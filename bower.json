@@ -1,5 +1,5 @@
 {
-  "name": "test-ember",
+  "name": "landing-ember",
   "version": "0.0.0",
   "dependencies": {
     "ember": "1.5.0",

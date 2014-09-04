@@ -1,0 +1,25 @@
+<div class="page">
+    <h1>Guilds</h1>
+    <div class="guild-grid">
+        {{#each guild in model}}
+        <div class="tile">
+            <div class="contents">
+                <div class="picture">
+                    <img {{bind-attr src=guild.picture}} alt="GuildPicture">
+                </div>
+                <div class="texts">
+                    <div class="name">
+                        Guild {{guild.id}}
+                    </div>
+                    <div class="description">
+
+                    </div>
+                    <div class="link">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

@@ -1,3 +1,10 @@
-TestEmber.Router.map(function () {
-  // Add your routes here
+LandingEmber.Router.map(function () {
+  
+  this.resource('guilds', function(){
+    this.resource('guild', { path: '/:guild_id' }, function(){
+      this.route('edit');
+    });
+    this.route('create');
+  });
+  
 });

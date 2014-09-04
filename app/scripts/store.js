@@ -1,1 +1,1 @@
-TestEmber.ApplicationAdapter = DS.FixtureAdapter;
+LandingEmber.ApplicationAdapter = DS.FixtureAdapter;

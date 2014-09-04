@@ -1,4 +1,4 @@
-var TestEmber = window.TestEmber = Ember.Application.create();
+var LandingEmber = window.LandingEmber = Ember.Application.create();
 
 /* Order and include as you please. */
 require('scripts/controllers/*');
