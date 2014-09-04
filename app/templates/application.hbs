@@ -1,0 +1,64 @@
+<div>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	  <div class="container">
+		<a class="navbar-brand" href="#/">
+			KTS Landing Page
+		</a>
+
+		<ul class="nav navbar-nav">
+		  <li class="active">
+			<a href="#/">
+			  <i class="fa fa-home"></i> <span>Home</span>
+			</a>
+		  </li>
+		  <li>
+			<a href="#/guilds">
+			  <i class="glyphicon glyphicon-tower"></i> <span>Guilds</span>
+			</a>
+		  </li>
+		  <li>
+			<a href="#/about">
+			  <i class="fa fa-info-circle"></i> <span>About</span>
+			</a>
+		  </li>
+		</ul>
+
+		<ul class="nav navbar-nav navbar-right">
+		  <button class="btn btn-danger navbar-btn" type="button">Login</button>
+
+		  <li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown">
+				  {{ username }}
+				</a>
+				<ul class="dropdown-menu" role="menu">
+				  <li><a href="#/profile">Profile</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#/">Log Out</a></li>
+				</ul>
+		  </li>
+		  <!-- <img class="img-circle" style="max-height: 2em; padding: 0em;" ng-src="{{userProfilePicture}}" alt=""> -->
+		</ul>
+
+	  </div>
+	</nav>
+
+	<div class="container" id="main">
+		<div class="row">
+			<div>
+				<div class="col-md-3">
+					<div class="well sidebar-nav">
+						<strong>Colors</strong>
+						<ul class="list-group">
+						{{#each item in controller}}
+							<li class="list-group-item">{{item}}</li>
+						{{/each}}
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-9">
+					{{outlet}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

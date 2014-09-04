@@ -1,0 +1,1 @@
+TestEmber.ApplicationAdapter = DS.FixtureAdapter;
