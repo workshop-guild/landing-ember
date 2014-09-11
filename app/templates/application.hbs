@@ -24,19 +24,22 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				{{#if controller.loggedIn}}
+				{{#if session.isAuthenticated}}
 				<li class="dropdown">
 					<a href class="dropdown-toggle" data-toggle="dropdown">
-						{{ username }}
+						Testis{{ username }}
 					</a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="#/profile">Profile</a></li>
 						<li class="divider"></li>
-						<li><a href="#/">Log Out</a></li>
+						<li><a {{ action 'invalidateSession' }}>Log Out</a></li>
 					</ul>
 				</li>
 				{{else}}
-				<button class="btn btn-danger navbar-btn" type="button">Login</button>
+				<button {{ action 'showForm' }} id="test" class="btn btn-danger navbar-btn" data-container="body" data-trigger="focus" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+					Login
+				</button>
 				{{/if}}
 			</ul>
 		</div>

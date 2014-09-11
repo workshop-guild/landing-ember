@@ -1,11 +1,6 @@
-LandingEmber.ApplicationRoute = Ember.Route.extend({
-	// admittedly, this should be in IndexRoute and not in the
-	// top level ApplicationRoute; we're in transition... :-)
-	model: function () {
-		return {
-			username: "Leon Ho",
-			loggedIn: true,
-			colors: ['red', 'yellow', 'blue']
-		}
-	}
+LandingEmber.ApplicationRoute = Ember.Route.extend(SimpleAuth.ApplicationRouteMixin);
+LandingEmber.ApplicationRoute.reopen({
+  authenticateSession: {
+
+  }
 });
