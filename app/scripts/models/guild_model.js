@@ -1,7 +1,10 @@
 /*global Ember*/
 LandingEmber.Guild = DS.Model.extend({
-  guild_id: DS.attr(),
-  picture: DS.attr( 'string' )
+  guild_id: DS.attr( 'number' ),
+  name: DS.attr( 'string' ),
+  desc: DS.attr( 'string' ),
+  link: DS.attr( 'string' ),
+  pic: DS.attr( 'string' )
 });
 
 LandingEmber.Guild.reopen({
@@ -19,7 +22,10 @@ LandingEmber.Guild.FIXTURES = (function(){
   for ( var i = 0; i < 20; ++i ){
     var guild = {
       id: i,
-      picture: 'http://placehold.it/200'
+      name: 'Workshop Guild',
+      desc: 'The only guild that gives a shit',
+      link: '//workshop-guild.github.io',
+      pic: '//placehold.it/200'
     }
     array[i] = guild;
   }

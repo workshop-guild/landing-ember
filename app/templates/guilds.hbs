@@ -1,21 +1,22 @@
 <div class="page">
-    <h1>Guilds</h1>
     <div class="guild-grid">
         {{#each guild in model}}
         <div class="tile">
             <div class="contents">
                 <div class="picture">
-                    <img {{bind-attr src=guild.picture}} alt="GuildPicture">
+                    <img {{bind-attr src=guild.pic}} alt="GuildPicture">
                 </div>
                 <div class="texts">
                     <div class="name">
-                        Guild {{guild.id}}
+                        {{guild.name}}
                     </div>
                     <div class="description">
-
+                        {{guild.desc}}
                     </div>
                     <div class="link">
-
+                        {{#link-to 'guild' guild.id class="btn btn-primary"}}
+                            Link
+                        {{/link-to}}
                     </div>
                 </div>
             </div>

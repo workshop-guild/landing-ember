@@ -1,0 +1,18 @@
+<table>
+  <tbody>
+    {{#each model.attributes}}
+    <tr>
+      <td>
+        <strong>{{this.key}}:</strong>
+      </td>
+      <td>
+        {{this.value}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+{{#link-to 'guild.edit' model}}Change{{/link-to}}
+
+{{outlet}}

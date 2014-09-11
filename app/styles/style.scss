@@ -3,11 +3,15 @@ $icon-font-path: "../styles/fonts/"; // Change the path to the fonts
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 @import "bootflat/bootflat/scss/bootflat.scss";
 
+// import font-awesome
+$fa-font-path: "fonts";
+@import "font-awesome/scss/font-awesome.scss";
+
 @import "compass";
 
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro);
 
-/* Put your CSS here */
+$footer-height: 100px;
 
 .page {
   //@extend .row;
@@ -41,8 +45,13 @@ $icon-font-path: "../styles/fonts/"; // Change the path to the fonts
   }
 }
 
+.footer {
+  bottom: 0;
+  width: 100%;
+}
+
 html, body {
-    margin: 30px 0;
+    margin-top: 30px;
 }
 
 body {

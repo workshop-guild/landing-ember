@@ -1,21 +1,21 @@
 <div>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 		<div class="container">
 			<a class="navbar-brand" href="#/">
 				KTS Landing Page
 			</a>
 
 			<ul class="nav navbar-nav">
-				<li class="active">
-					<a href="#/">
+				{{#link-to "index" tagName="li"}}
+					{{#link-to "index"}}
 						<i class="fa fa-home"></i> <span>Home</span>
-					</a>
-				</li>
-				<li>
-					<a href="#/guilds">
+					{{/link-to}}
+				{{/link-to}}
+				{{#link-to "guilds" tagName="li"}}
+					{{#link-to "guilds"}}
 						<i class="glyphicon glyphicon-tower"></i> <span>Guilds</span>
-					</a>
-				</li>
+					{{/link-to}}
+				{{/link-to}}
 				<li>
 					<a href="#/about">
 						<i class="fa fa-info-circle"></i> <span>About</span>
@@ -49,11 +49,19 @@
 	<div class="footer">
 		<div class="container">
 			<div class="footer-logo">
-
+				<span>
+					{{#link-to "index"}}
+						KTS Landing Page
+					{{/link-to}}
+				</span>
 			</div>
 			<dl class="footer-nav">
 				<dt class="nav-title">Happy Birthday</dt>
-				<dd class="nav-item">ByeBye</dd>
+				<dd class="nav-item">
+					{{#link-to "index"}}
+						ByeBye
+					{{/link-to}}
+				</dd>
 			</dl>
 			<dl class="footer-nav">
 
@@ -62,6 +70,6 @@
 
 			</dl>
 		</div>
+		<div class="footer-copyright text-center">Made with <span><i class="fa fa-heart"></i></span> by Workshop Guild</div>
 	</div>
-
 </div>
