@@ -1,4 +1,4 @@
-<div>
+<div class="wrap">
 	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 		<div class="container">
 			<a class="navbar-brand" href="#/">
@@ -36,8 +36,7 @@
 					</ul>
 				</li>
 				{{else}}
-				<button {{ action 'showForm' }} id="test" class="btn btn-danger navbar-btn" data-container="body" data-trigger="focus" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-sagittis lacus vel augue laoreet rutrum faucibus.">
+				<button {{ action 'authenticateSession' }} class="btn btn-danger navbar-btn">
 					Login
 				</button>
 				{{/if}}
@@ -45,8 +44,10 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 		</div>
 	</nav>
 
-	<div class="container">
-		{{outlet}}
+	<div class="content">
+		<div class="container">
+			{{outlet}}
+		</div>
 	</div>
 
 	<div class="footer">

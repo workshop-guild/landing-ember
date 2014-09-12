@@ -1,5 +1,47 @@
 var LandingEmber = window.LandingEmber = Ember.Application.create();
 
+window.ENV = window.ENV || {};
+window.ENV['simple-auth'] = {
+  authenticationRoute: 'login'
+}
+
+var LandingAuthenticator = SimpleAuth.Authenticators.Base.extend({
+  loginEndPoint: 'http://localhost:8080/login',
+
+  authenticate: function(credentials){
+    var _this = this;
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      Ember.$.ajax({
+        url:         _this.loginEndPoint,
+        type:        'POST',
+        data:        JSON.stringify({ email: credentials.identification, password: credentials.password }),
+        contentType: 'application/json'
+      }).then(
+        function(response) { // success
+          Ember.run(function() {
+            console.log( response );
+            resolve({});
+          });
+        },
+        function(xhr, status, error) { // fail
+          var response = JSON.parse(xhr.responseText);
+          Ember.run(function() {
+            reject(response.error);
+          });
+        }
+      );
+    });
+  }
+});
+
+Ember.Application.initializer({
+  name: 'authentication',
+  before: 'simple-auth',
+  initialize: function(container, application) {
+    container.register('authenticator:custom', LandingAuthenticator);
+  }
+});
+
 /* Order and include as you please. */
 require('simple-auth/ember');
 require('scripts/controllers/*');
