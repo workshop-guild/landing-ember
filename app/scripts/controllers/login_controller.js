@@ -1,5 +1,5 @@
 LandingEmber.LoginController = Ember.ObjectController.extend(SimpleAuth.LoginControllerMixin);
 LandingEmber.LoginController.reopen({
-  content: {},
+  model: {},
   authenticator: 'authenticator:custom'
 })
