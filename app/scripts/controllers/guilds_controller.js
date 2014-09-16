@@ -1,4 +1,14 @@
 LandingEmber.GuildsController = Ember.ObjectController.extend({
-  // Implement your controller here.
 });
 
+LandingEmber.GuildsIndexController = Ember.ObjectController.extend({
+  actions: {
+    test: function( guild ){
+      this.transitionToRoute('guilds.guild', guild);
+    }
+  }
+});
+
+LandingEmber.GuildsGuildController = Ember.ObjectController.extend({
+
+});

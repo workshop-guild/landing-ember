@@ -1,9 +1,7 @@
 <div class="wrap">
 	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 		<div class="container">
-			<a class="navbar-brand" href="#/">
-				KTS Landing Page
-			</a>
+			{{link-to 'KTS Landing Page' 'index' class='navbar-brand'}}
 
 			<ul class="nav navbar-nav">
 				{{#link-to "index" tagName="li"}}
@@ -11,16 +9,16 @@
 						<i class="fa fa-home"></i> <span>Home</span>
 					{{/link-to}}
 				{{/link-to}}
-				{{#link-to "guilds" tagName="li"}}
-					{{#link-to "guilds"}}
+				{{#link-to 'guilds' tagName="li"}}
+					{{#link-to 'guilds'}}
 						<i class="glyphicon glyphicon-tower"></i> <span>Guilds</span>
 					{{/link-to}}
 				{{/link-to}}
-				<li>
-					<a href="#/about">
+				{{#link-to "about" tagName="li"}}
+					{{#link-to "about"}}
 						<i class="fa fa-info-circle"></i> <span>About</span>
-					</a>
-				</li>
+					{{/link-to}}
+				{{/link-to}}
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">

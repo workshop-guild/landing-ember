@@ -1,4 +1,6 @@
-var LandingEmber = window.LandingEmber = Ember.Application.create();
+var LandingEmber = window.LandingEmber = Ember.Application.create({
+  LOG_TRANSITIONS: true
+});
 
 window.ENV = window.ENV || {};
 window.ENV['simple-auth'] = {

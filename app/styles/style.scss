@@ -1,8 +1,6 @@
 $icon-font-path: "../styles/fonts/"; // Change the path to the fonts
-
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 @import "bootflat/bootflat/scss/bootflat.scss";
-
 // import font-awesome
 $fa-font-path: "fonts";
 @import "font-awesome/scss/font-awesome.scss";
@@ -10,6 +8,8 @@ $fa-font-path: "fonts";
 @import "compass";
 
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro);
+
+@import "mixins";
 
 $footer-height: 100px;
 
@@ -25,7 +25,12 @@ $footer-height: 100px;
 
     .contents {
       @extend .jumbotron;
-      //@extend .row;
+
+      transition: all .2s linear;
+
+      &:hover {
+        @extend .frame-z2;
+      }
 
       .picture {
         @extend .jumbotron-photo;
@@ -58,4 +63,39 @@ $footer-height: 100px;
 
 html, body {
   height: 100%;
+}
+
+.frame-z0 {
+  z-index: 0;
+  @include frame-animation;
+}
+
+.frame-z1 {
+  z-index: 1;
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+  @include frame-animation;
+}
+
+.frame-z2 {
+  z-index: 2;
+  box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
+  @include frame-animation;
+}
+
+.frame-z3 {
+  z-index: 3;
+  box-shadow: 0px 17px 50px rgba(0, 0, 0, 0.19);
+  @include frame-animation;
+}
+
+.frame-z4 {
+  z-index: 4;
+  box-shadow: 0px 16px 28px 0 rgba(0, 0, 0, 0.22);
+  @include frame-animation;
+}
+
+.frame-z5 {
+  z-index: 5;
+  box-shadow: 0px 27px 24px 0 rgba(0, 0, 0, 0.2);
+  @include frame-animation;
 }

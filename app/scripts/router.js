@@ -1,12 +1,16 @@
 LandingEmber.Router.map(function () {
 
   this.resource('guilds', function(){
-    this.resource('guild', { path:'/:guild_id' }, function(){
-      this.route('index');
-    });
+    this.route('guild', { path: '/:guild_id' });
   });
 
   this.route('login');
 
   this.route('register');
+
+  this.route('about');
 });
+
+LandingEmber.Router.reopen({
+  location: 'history'
+})
