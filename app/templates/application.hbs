@@ -1,46 +1,54 @@
 <div class="wrap">
 	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 		<div class="container">
-			<a class="navbar-brand" href="#/">
-				KTS Landing Page
-			</a>
-
-			<ul class="nav navbar-nav">
-				{{#link-to "index" tagName="li"}}
-					{{#link-to "index"}}
-						<i class="fa fa-home"></i> <span>Home</span>
-					{{/link-to}}
-				{{/link-to}}
-				{{#link-to "guilds" tagName="li"}}
-					{{#link-to "guilds"}}
-						<i class="glyphicon glyphicon-tower"></i> <span>Guilds</span>
-					{{/link-to}}
-				{{/link-to}}
-				<li>
-					<a href="#/about">
-						<i class="fa fa-info-circle"></i> <span>About</span>
-					</a>
-				</li>
-			</ul>
-
-			<ul class="nav navbar-nav navbar-right">
-				{{#if session.isAuthenticated}}
-				<li class="dropdown">
-					<a href class="dropdown-toggle" data-toggle="dropdown">
-						Testis{{ username }}
-					</a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#/profile">Profile</a></li>
-						<li class="divider"></li>
-						<li><a {{ action 'invalidateSession' }}>Log Out</a></li>
-					</ul>
-				</li>
-				{{else}}
-				<button {{ action 'authenticateSession' }} class="btn btn-danger navbar-btn">
-					Login
+			<div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
-				{{/if}}
-			</ul>
+				<a class="navbar-brand" href="#/">Landing</a>
+		    	</div>
+
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					{{#link-to "index" tagName="li"}}
+						{{#link-to "index"}}
+							<i class="fa fa-home"></i> <span>Home</span>
+						{{/link-to}}
+					{{/link-to}}
+					{{#link-to "guilds" tagName="li"}}
+						{{#link-to "guilds" 'all'}}
+							<i class="glyphicon glyphicon-tower"></i> <span>Guilds</span>
+						{{/link-to}}
+					{{/link-to}}
+					<li>
+						<a href="#/about">
+							<i class="fa fa-info-circle"></i> <span>About</span>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					{{#if session.isAuthenticated}}
+					<li class="dropdown">
+						<a href class="dropdown-toggle" data-toggle="dropdown">
+							{{ username }} has logged on
+						</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#/profile">Profile</a></li>
+							<li class="divider"></li>
+							<li><a {{ action 'invalidateSession' }}>Log Out</a></li>
+						</ul>
+					</li>
+					{{else}}
+					<button {{ action 'authenticateSession' }} class="btn btn-danger navbar-btn">
+						Login
+					</button>
+					{{/if}}
+				</ul>
+			</div>
 		</div>
 	</nav>
 
@@ -55,7 +63,7 @@
 			<div class="footer-logo">
 				<span>
 					{{#link-to "index"}}
-						KTS Landing Page
+						Landing
 					{{/link-to}}
 				</span>
 			</div>
