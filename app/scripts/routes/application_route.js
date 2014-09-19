@@ -5,7 +5,8 @@ LandingEmber.ApplicationRoute.reopen({
       document.title = 'Home';
     },
     sessionAuthenticationFailed: function(error) {
-      this.controllerFor('application').set('loginErrorMessage', error.message);
+      //console.debug(error);
+      //this.controllerFor('application').set('loginErrorMessage', error.message);
     }
   }
 });

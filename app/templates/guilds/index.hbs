@@ -1,14 +1,14 @@
 <div class="page">
     <div class="guild-grid">
-        {{#each guild in model}}
-        <div class="tile" {{ action 'test' guild on='click' }}>
+        {{#each guild in guilds}}
+        <div class="tile" {{ action 'visitGuild' guild on='click' }}>
             <div class="contents">
                 <div class="picture">
                     <img {{bind-attr src=guild.pic}} alt="GuildPicture">
                 </div>
                 <div class="texts">
                     <div class="name">
-                        <h4>{{guild.name}}</h4>
+                        <h4>{{guild.name}} {{guild.id}}</h4>
                     </div>
                     <div class="description">
                         {{guild.desc}}

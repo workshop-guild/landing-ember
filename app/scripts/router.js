@@ -9,8 +9,10 @@ LandingEmber.Router.map(function () {
   this.route('register');
 
   this.route('about');
+
+  this.route('profile');
 });
 
 LandingEmber.Router.reopen({
-  location: 'history'
+  //location: 'history'
 })

@@ -11,10 +11,24 @@ $fa-font-path: "fonts";
 
 @import "mixins";
 
-$footer-height: 100px;
+.profile-page {
+  @extend .row;
 
-.page {
-  padding-bottom: 30px;
+  .profile {
+    @include make-md-column(6);
+    &.default {
+      @include make-md-column-offset(3);
+    }
+    &.edit {
+      user-select: none;
+      cursor: default;
+    }
+  }
+  .editor {
+    textarea {
+    }
+    @include make-md-column(6);
+  }
 }
 
 .guild-grid {
@@ -50,6 +64,10 @@ $footer-height: 100px;
   }
 }
 
+.page {
+
+}
+
 .wrap {
   display: flex;
   flex-direction: column;
@@ -58,6 +76,7 @@ $footer-height: 100px;
 
 .content {
   padding-top: 70px;
+  padding-bottom: 30px;
   flex: 1;
 }
 

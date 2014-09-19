@@ -28,7 +28,7 @@ var LandingAuthenticator = SimpleAuth.Authenticators.Base.extend({
         function(xhr, status, error) { // fail
           var response = JSON.parse(xhr.responseText);
           Ember.run(function() {
-            reject(response.error);
+            reject(response);
           });
         }
       );
@@ -52,4 +52,5 @@ require('scripts/models/*');
 require('scripts/routes/*');
 require('scripts/components/*');
 require('scripts/views/*');
+require('scripts/helpers/*');
 require('scripts/router');
