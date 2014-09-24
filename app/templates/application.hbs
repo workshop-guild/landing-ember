@@ -34,16 +34,16 @@
 					{{#if session.isAuthenticated}}
 					<li class="dropdown">
 						<a href class="dropdown-toggle" data-toggle="dropdown">
-								{{ username }} has logged on
+								{{session.username}} has logged on
 						</a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#/profile">Profile</a></li>
+							<li>{{link-to "Profile" "profile"}}</li>
 							<li class="divider"></li>
-							<li><a {{ action 'invalidateSession' }}>Log Out</a></li>
+							<li><a {{action 'invalidateSession'}}>Log Out</a></li>
 						</ul>
 					</li>
 					{{else}}
-					<button {{ action 'authenticateSession' }} class="btn btn-danger navbar-btn">
+					<button {{action 'authenticateSession'}} class="btn btn-danger navbar-btn">
 						Login
 					</button>
 					{{/if}}
@@ -52,11 +52,11 @@
 		</div>
 	</nav>
 
-	<div class="content">
+	<main class="content">
 		<div class="container">
 			{{outlet}}
 		</div>
-	</div>
+	</main>
 
 	<div class="footer">
 		<div class="container">

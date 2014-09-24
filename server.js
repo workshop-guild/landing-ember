@@ -12,6 +12,6 @@ app.get('*', function(req, res){
   res.send(fs.readFileSync('dist/index.html'));
 });
 
-var server = http.createServer(app).listen(8888, function(err){
+var server = http.createServer(app).listen(8080, function(err){
   console.log('listening');
 });
