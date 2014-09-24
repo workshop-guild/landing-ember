@@ -11,58 +11,8 @@ $fa-font-path: "fonts";
 
 @import "mixins";
 
-.profile-page {
-  @extend .row;
-
-  .profile {
-    @include make-md-column(6);
-    &.default {
-      @include make-md-column-offset(3);
-    }
-    &.edit {
-      user-select: none;
-      cursor: default;
-    }
-  }
-  .editor {
-    textarea {
-    }
-    @include make-md-column(6);
-  }
-}
-
-.guild-grid {
-  @extend .row;
-
-  .tile {
-    @include make-md-column(3);
-
-    .contents {
-      @extend .jumbotron;
-
-      transition: all .2s linear;
-
-      &:hover {
-        @extend .frame-z2;
-      }
-
-      .picture {
-        @extend .jumbotron-photo;
-      }
-
-      .texts {
-        @extend .jumbotron-contents;
-        .name {
-        }
-        .description{
-        }
-        .link {
-
-        }
-      }
-    }
-  }
-}
+@import "guild";
+@import "profile";
 
 .page {
 
@@ -80,8 +30,18 @@ $fa-font-path: "fonts";
   flex: 1;
 }
 
+.visible-xs-row {
+  @media (min-width: $screen-xs-min) {
+    @include make-row();
+  }
+}
+
 html, body {
   height: 100%;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 .frame-z0 {
