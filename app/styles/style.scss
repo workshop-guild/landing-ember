@@ -11,43 +11,11 @@ $fa-font-path: "fonts";
 
 @import "mixins";
 
-$footer-height: 100px;
+@import "guild";
+@import "profile";
 
 .page {
-  padding-bottom: 30px;
-}
 
-.guild-grid {
-  @extend .row;
-
-  .tile {
-    @include make-md-column(3);
-
-    .contents {
-      @extend .jumbotron;
-
-      transition: all .2s linear;
-
-      &:hover {
-        @extend .frame-z2;
-      }
-
-      .picture {
-        @extend .jumbotron-photo;
-      }
-
-      .texts {
-        @extend .jumbotron-contents;
-        .name {
-        }
-        .description{
-        }
-        .link {
-
-        }
-      }
-    }
-  }
 }
 
 .wrap {
@@ -58,11 +26,22 @@ $footer-height: 100px;
 
 .content {
   padding-top: 70px;
+  padding-bottom: 30px;
   flex: 1;
+}
+
+.visible-xs-row {
+  @media (min-width: $screen-xs-min) {
+    @include make-row();
+  }
 }
 
 html, body {
   height: 100%;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 .frame-z0 {

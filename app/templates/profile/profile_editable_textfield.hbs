@@ -1,0 +1,15 @@
+{{#if view.isEditing}}
+<div class="input-group">
+  {{#if view.prefix}}
+    <span class="input-group-addon">{{view.prefix}}</span>
+  {{/if}}
+  {{input class="form-control" type="text" value=view.field}}
+</div>
+{{else}}
+{{view.prefix}}{{view.field}}
+  {{#if view.showControls}}
+  <a href="#" {{action "edit" target=view}}>
+    <i class="fa fa-pencil"></i>
+  </a>
+  {{/if}}
+{{/if}}
