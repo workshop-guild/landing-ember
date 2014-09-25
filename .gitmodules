@@ -1,0 +1,3 @@
+[submodule "landing-svr2"]
+	path = landing-svr2
+	url = https://github.com/workshop-guild/landing-svr2.git
