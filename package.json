@@ -35,5 +35,8 @@
   },
   "engines": {
     "node": ">=0.8.0"
-  }
+  },
+  "scripts": {
+    "start" : "grunt build && cd landing-svr2 && nodemon server.js"
+}
 }
