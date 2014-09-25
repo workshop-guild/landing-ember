@@ -5,6 +5,7 @@ To Install
 ====
 
 ```
+sudo gem install compass
 npm install
 bower install
 ```
